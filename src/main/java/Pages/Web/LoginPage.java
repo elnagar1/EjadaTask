@@ -28,6 +28,28 @@ public class LoginPage extends WebPageBase {
     @FindBy(id = "btn_login kt_login_signin_submit")
     WebElement loginBtn;
 
+    @FindBy(id = "kt_aside_menu")
+    WebElement kt_aside_menu;
+
+    @FindBy(linkText = "Orders")
+    WebElement Orders;
+
+    @FindBy(linkText = "Orders List")
+    WebElement OrdersList;
+
+    @FindBy(id = "mat-expansion-panel-header-0")
+    WebElement searchPanel;
+
+    @FindBy(id = "order_number")
+    WebElement order_number;
+
+    @FindBy(id = "btn_search")
+    WebElement btn_search;
+
+    @FindBy(xpath = "m//*[@id=\"cdk-drop-list-0\"]/tbody/tr/td[9]/button/span/mat-icon")
+    WebElement orderDetails;
+
+
 
     public void clickLogin(String email, String password) {
         webDriver.navigate().to("https://dashboard-dev.shgardi.app/auth/login");
@@ -38,22 +60,25 @@ public class LoginPage extends WebPageBase {
 
 
     public void LunchWeb(String orderNumber) throws InterruptedException {
-        webDriver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        //Creating object of an Actions class
-        Actions action = new Actions(webDriver);
-        //Performing the mouse hover action on the target element.
-        action.moveToElement(webDriver. findElement(By.id("kt_aside_menu"))).perform();
 
-        webDriver.findElement(By.linkText("Orders")).click();
-        webDriver.findElement(By.linkText("Orders List")).click();
-        webDriver.findElement(By.id("mat-expansion-panel-header-0")).click();
-        webDriver.findElement(By.id("order_number")).sendKeys(orderNumber);
-        webDriver.findElement(By.id("btn_search")).click();
+        webDriver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+
+        Actions action = new Actions(webDriver);
+        action.moveToElement(kt_aside_menu).perform();
+
+        webDriver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+        Orders.click();
+        OrdersList.click();
+        searchPanel.click();
+        order_number.sendKeys(orderNumber);
+        btn_search.click();
+        webDriver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+
         JavascriptExecutor js = (JavascriptExecutor) webDriver;
         js.executeScript("window.scrollBy(0,350)", "");
-        Thread.sleep(3000);
-        action.moveToElement(webDriver.findElement(By.xpath("//*[@id=\"cdk-drop-list-0\"]/tbody/tr/td[9]/button/span/mat-icon"))).perform();
-        webDriver.findElement(By.xpath("//*[@id=\"cdk-drop-list-0\"]/tbody/tr/td[9]/button/span/mat-icon")).click();
+
+        action.moveToElement(orderDetails).perform();
+        orderDetails.click();
 
     }
 

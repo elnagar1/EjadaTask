@@ -36,27 +36,53 @@ public class CourierLoginPage extends AndroidPageBase {
     @AndroidFindBy(id = "btnLogin")
     AndroidElement btnLogin;
 
+    @AndroidFindBy(id = "order_payment_type_container")
+    AndroidElement order;
+
+    @AndroidFindBy(id = "btnAccept")
+    AndroidElement btnAccept;
+
+    @AndroidFindBy(id = "tvUpdateOrderStatus")
+    AndroidElement tvUpdateOrderStatus;
+
+    @AndroidFindBy(id = "btnDone")
+    AndroidElement btnDone;
+
+    @AndroidFindBy(id = "etPrice")
+    AndroidElement etPrice;
+
+    @AndroidFindBy(id = "ibUpload")
+    AndroidElement ibUpload;
+
+    @AndroidFindBy(id = "view_gallery")
+    AndroidElement view_gallery;
+
+    @AndroidFindBy(xpath = "//android.widget.LinearLayout[@content-desc=\"Screenshot_20220629-104441_Shgardi Captain.jpg, 457 kB, 29 Jun\"]/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.ImageView")
+    AndroidElement photo;
+
+    @AndroidFindBy(id = "btnSend")
+    AndroidElement btnSend;
+
+
+
 
     public void CourierLogin() throws InterruptedException, MalformedURLException {
 
+
         // Login
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        tvCountryCodeNumber.click();
-
+        driver. findElement(By.id("tvCountryCodeNumber")).click();
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        cl_select_egypt.click();
-
+        driver.findElement(By.id("cl_select_egypt")).click();
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        etCurrentNumber.sendKeys("01012661525");
-
+        driver.findElement(By.id("etCurrentNumber")).sendKeys("01012661525");
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        btn_continue.click();
-
+        driver.findElement(By.id("btn_continue")).click();
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        etNewPassword.sendKeys("a12345678");
-
+        driver.findElement(By.id("etNewPassword")).sendKeys("a12345678");
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        btnLogin.click();
+        driver.findElement(By.id("btnLogin")).click();
+        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
 
         //Accept order
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
@@ -98,6 +124,7 @@ public class CourierLoginPage extends AndroidPageBase {
         driver.findElement(By.id("tvUpdateOrderStatus")).click();
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         driver.findElement(By.id("btnDone")).click();
+
 
 
 

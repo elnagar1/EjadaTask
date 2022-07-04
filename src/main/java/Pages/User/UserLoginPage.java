@@ -19,36 +19,80 @@ public class UserLoginPage extends AndroidPageBase {
     }
 
     @AndroidFindBy(id = "rv_skip_forward")
+    public
     AndroidElement skipButton;
 
     @AndroidFindBy(id = "tvChangeConfig")
+    public
     AndroidElement btnChooseDev;
 
     @AndroidFindBy(id = "rbDev")
+    public
     AndroidElement chooseDev;
 
     @AndroidFindBy(id = "btnConfirm")
+    public
     AndroidElement confirmDev;
 
     @AndroidFindBy(id = "tvCountryCodeNumber")
-    AndroidElement countryCodeTxtBox;
+    public AndroidElement countryCodeTxtBox;
 
     @AndroidFindBy(id = "etCurrentNumber")
-    AndroidElement numberTxtBox;
+    public AndroidElement numberTxtBox;
 
     @AndroidFindBy(id = "cl_select_egypt")
-    AndroidElement egypt;
+    public  AndroidElement egypt;
 
     @AndroidFindBy(id = "btn_continue")
-    AndroidElement numberContinue;
+    public AndroidElement numberContinue;
 
     @AndroidFindBy(id = "etNewPassword")
-    AndroidElement passwordTxtBox;
+    public AndroidElement passwordTxtBox;
 
     @AndroidFindBy(id = "btnLogin")
-    AndroidElement loginBtn;
+    public AndroidElement loginBtn;
 
+    @AndroidFindBy(id = "tv_search_main")
+    public AndroidElement tv_search_main;
 
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.widget.ImageView\n")
+    public  AndroidElement choose;
+
+    @AndroidFindBy(id = "rbAnything")
+    public AndroidElement rbAnything;
+
+    @AndroidFindBy(id = "button_done")
+    public AndroidElement button_done;
+
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.SearchView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.AutoCompleteTextView")
+    public AndroidElement search;
+
+    @AndroidFindBy(id = "rv_notify")
+    public AndroidElement rv_notify;
+
+    @AndroidFindBy(id = "btn_confirm_cost")
+    public AndroidElement btn_confirm_cost;
+
+    @AndroidFindBy(id = "et_add_item_order_anything")
+    public AndroidElement et_add_item_order_anything;
+
+    @AndroidFindBy(id = "cl_proceed_checkout")
+    public AndroidElement cl_proceed_checkout;
+
+    @AndroidFindBy(id = "tvLessThan100")
+    public AndroidElement tvLessThan100;
+
+    @AndroidFindBy(id = "confirm")
+    public AndroidElement confirm;
+
+    @AndroidFindBy(id = "cash_radio_button")
+    public AndroidElement tv_cash;
+
+    @AndroidFindBy(id = "btn")
+    public AndroidElement btn;
+
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.FrameLayout/android.widget.LinearLayout/androidx.appcompat.widget.LinearLayoutCompat[2]/android.view.ViewGroup[2]/android.widget.TextView[2]")
+    public AndroidElement orderNumberButton;
 
 
     public void UserLogin(String number, String password) throws InterruptedException {
@@ -88,52 +132,60 @@ public class UserLoginPage extends AndroidPageBase {
 
         //Click to search
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        driver.findElement(By.id("tv_search_main")).click();
-        Thread.sleep(5000);
+        tv_search_main.click();
+
 
         //Click to choose anything
-        driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.widget.ImageView\n")).click();
+        Thread.sleep(5000);
+        choose.click();
 
         Thread.sleep(5000);
-        driver.findElement(By.id("rbAnything")).click();
-
-        driver.findElement(By.id("button_done")).click();
+        rbAnything.click();
+        button_done.click();
 
         //Set location
 
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.SearchView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.AutoCompleteTextView"))
-                .sendKeys("كشرى هند المعادي");
+        search.sendKeys("كشرى هند المعادي");
+
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.findElement(By.id("rv_notify")).click();
+        rv_notify.click();
+
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        driver.findElement(By.id("btn_confirm_cost")).click();
+        btn_confirm_cost.click();
+
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        driver.findElement(By.id("et_add_item_order_anything")).click();
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+        et_add_item_order_anything.click();
+
         //problem is here
+        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+        et_add_item_order_anything.sendKeys("bread ");
 
-        driver.findElement(By.id("et_add_item_order_anything")).sendKeys("bread ");
-
+        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         driver.navigate().back();
+
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        driver.findElement(By.id("cl_proceed_checkout")).click();
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+        cl_proceed_checkout.click();
+
 
         //range order price
-        driver.findElement(By.id("tvLessThan100")).click();
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        driver.findElement(By.id("confirm")).click();
+        tvLessThan100.click();
+
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+        confirm.click();
+
 
         //CheckOut screen
         //Select cash payment type
-        driver.findElement(By.id("tv_cash")).click();
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        driver.findElement(By.id("btn")).click();
+        tv_cash.click();
+
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        orderNumber = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.FrameLayout/android.widget.LinearLayout/androidx.appcompat.widget.LinearLayoutCompat[2]/android.view.ViewGroup[2]/android.widget.TextView[2]")).getText();
-        //orderNumber = driver.findElement(By.id("661c8cf9-ecc9-41c1-91a0-c9853a72bd95")).getText();
+        btn.click();
+
+        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+        orderNumber =orderNumberButton.getText();
 
         System.out.println(orderNumber);
 
