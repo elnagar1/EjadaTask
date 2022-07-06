@@ -107,22 +107,14 @@ public class CourierLoginPage extends AndroidPageBase {
 
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         driver.findElement(By.id("ibUpload")).click();
+
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         driver.findElement(By.xpath("//*[@text='استخدام الكاميرا']")).click();
+        driver.pressKey(new KeyEvent(AndroidKey.CAMERA));
 
-        driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[3]/android.view.ViewGroup/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.RelativeLayout")).click();
+      //  driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[3]/android.view.ViewGroup/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.RelativeLayout")).click();
         new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='موافق']")));
         driver.findElement(By.xpath("//*[@text='موافق']")).click();
-
-/*
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        driver.findElement(By.id("view_gallery")).click();
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        driver.findElement(By.xpath("//android.widget.LinearLayout[@content-desc=\"Screenshot_20220629-104441_Shgardi Captain.jpg, 457 kB, 29 Jun\"]/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.ImageView")).click();
-*/
 
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         driver.findElement(By.id("btnSend")).click();
