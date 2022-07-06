@@ -85,7 +85,7 @@ public class UserLoginPage extends AndroidPageBase {
     @AndroidFindBy(id = "confirm")
     public AndroidElement confirm;
 
-    @AndroidFindBy(id = "cash_radio_button")
+    @AndroidFindBy(id = "tv_cash")
     public AndroidElement tv_cash;
 
     @AndroidFindBy(id = "btn")

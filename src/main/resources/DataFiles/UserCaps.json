@@ -1,9 +1,8 @@
 {
 	"platformName": "android",
-	"platformVersion": "9",
+	"platformVersion": "12.0",
 	"appActivity": "com.mnasat.nashmi.presentation.splash.SplashActivity",
 	"appPackage": "com.mnasat.nashmi",
 	"automationName": "UiAutomator2",
-	"deviceName": "Emulator"
+	"deviceName": "Galaxy A32"
 }
-
