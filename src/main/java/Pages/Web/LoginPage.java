@@ -1,12 +1,12 @@
 package Pages.Web;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import Utilities.Base.WebPageBase;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.concurrent.TimeUnit;
 
@@ -16,6 +16,7 @@ public class LoginPage extends WebPageBase {
 
     public LoginPage(WebDriver driver) {
         super(driver);
+
         this.webDriver = driver;
     }
 
@@ -43,6 +44,12 @@ public class LoginPage extends WebPageBase {
     @FindBy(id = "order_number")
     WebElement order_number;
 
+    @FindBy(id = "select_OrderStatus")
+    WebElement chooseDelivered;
+
+    @FindBy(xpath = "//*[@id=\"mat-option-18\"]/span")
+    WebElement delivered;
+
     @FindBy(id = "btn_search")
     WebElement btn_search;
 
@@ -68,9 +75,13 @@ public class LoginPage extends WebPageBase {
 
         webDriver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Orders.click();
+        webDriver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         OrdersList.click();
+        webDriver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         searchPanel.click();
         order_number.sendKeys(orderNumber);
+        chooseDelivered.click();
+        delivered.click();
         btn_search.click();
         webDriver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
 
