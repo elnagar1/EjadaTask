@@ -16,7 +16,4 @@ Feature: Automated End2End Normal Order
 
     Examples:
       |    UPhone    |  UPassword  |   address        |
-      | 01150300594 |   123456   | كشرى هند المعادي |
-
-
-
+      | 01150300594  |   123456    | كشرى هند المعادي |

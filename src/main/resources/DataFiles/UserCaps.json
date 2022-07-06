@@ -1,8 +1,9 @@
 {
 	"platformName": "android",
-	"platformVersion": "12.0",
+	"platformVersion": "9",
 	"appActivity": "com.mnasat.nashmi.presentation.splash.SplashActivity",
 	"appPackage": "com.mnasat.nashmi",
 	"automationName": "UiAutomator2",
-	"deviceName": "Galaxy A72"
+	"deviceName": "Emulator"
 }
+

@@ -55,6 +55,7 @@ public class TestBase {   // App1 capabilities
             driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
             return driver;
     }
+
     public static AndroidDriver getNewCourierDriver() throws IOException, ParseException {
         DesiredCapabilities caps2 = Helper.setCaps("src/main/resources/DataFiles/CourierCaps.json");
         return new AndroidDriver(new URL("http://localhost:4723/wd/hub"), caps2);
@@ -64,6 +65,18 @@ public class TestBase {   // App1 capabilities
         DesiredCapabilities caps = Helper.setCaps("src/main/resources/DataFiles/UserCaps.json");
         return  new AndroidDriver(new URL("http://localhost:4723/wd/hub"), caps);
     }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
