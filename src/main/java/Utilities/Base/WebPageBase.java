@@ -9,10 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class WebPageBase {
 
-	protected WebDriver drvier ; 
-	public JavascriptExecutor jse ; 
-	public Select select ; 
-	public Actions action ; 
+	public JavascriptExecutor jse ;
 
 	// create constructor 
 	public WebPageBase(WebDriver driver)
@@ -20,12 +17,12 @@ public class WebPageBase {
 		PageFactory.initElements(driver, this);
 	}
 	
-	protected static void clickButton(WebElement button) 
+	public static void clickButton(WebElement button)
 	{
 		button.click();
 	}
 	
-	protected static void setTextElementText(WebElement textElement , String value) 
+	public static void setTextElementText(WebElement textElement , String value)
 	{
 		textElement.sendKeys(value);
 	}

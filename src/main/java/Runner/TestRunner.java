@@ -5,7 +5,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 
 @CucumberOptions(
-    features="src/main/resources/Features",
+    features="src/main/resources/Features/NormalOrder.feature",
     glue= {"Steps"},
     plugin= {"pretty","html:target/cucumber-html-report"}
 )

@@ -1,70 +1,781 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("NormalOrder.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/main/resources/Features/PackageOrder.feature");
 formatter.feature({
   "line": 1,
-  "name": "Automated End2End Normal Order",
+  "name": "Automated End2End SendPackage Order",
   "description": "",
-  "id": "automated-end2end-normal-order",
+  "id": "automated-end2end-sendpackage-order",
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
   "line": 3,
-  "name": "Normal Order Cycle",
+  "name": "SendPackage-Cash-English-LightMode",
   "description": "",
-  "id": "automated-end2end-normal-order;normal-order-cycle",
+  "id": "automated-end2end-sendpackage-order;sendpackage-cash-english-lightmode",
   "type": "scenario_outline",
   "keyword": "Scenario Outline"
 });
 formatter.step({
-  "line": 5,
+  "line": 4,
+  "name": "Start user app",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 6,
+  "name": "Click skip button and choose env",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 7,
+  "name": "Choose country code for user",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 8,
+  "name": "Enter \"\u003cUPhone\u003e\"  click continue",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 9,
+  "name": "Enter \"\u003cUPassword\u003e\" and click sign in",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 10,
+  "name": "Click sendPackage order type",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 11,
+  "name": "Click in changeLocation  then choose currentLocation",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Click in EnterLocation then Click chooseInMap button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Choose location and click Done button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Write the thing that you want to deliver then choose it\u0027s image then Click next",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Choose payment type cash and then click place order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "Open courier app",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Choose country code for c",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "Enter \"\u003cCPhone\u003e\"  click continue c",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "Enter \"\u003cCPassword\u003e\" and click signIn  courier",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "Open orders panel and accept order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "Change order status",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "Change order status",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "Change order status",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
   "name": "Order must done",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 7,
+  "line": 26,
   "name": "",
   "description": "",
-  "id": "automated-end2end-normal-order;normal-order-cycle;",
+  "id": "automated-end2end-sendpackage-order;sendpackage-cash-english-lightmode;",
   "rows": [
     {
       "cells": [
         "UPhone",
         "UPassword",
-        "address"
+        "CPhone",
+        "CPassword"
       ],
-      "line": 8,
-      "id": "automated-end2end-normal-order;normal-order-cycle;;1"
+      "line": 27,
+      "id": "automated-end2end-sendpackage-order;sendpackage-cash-english-lightmode;;1"
     },
     {
       "cells": [
         "01150300594",
         "123456",
-        "كشرى هند المعادي"
+        "01012661525",
+        "a12345678"
       ],
-      "line": 9,
-      "id": "automated-end2end-normal-order;normal-order-cycle;;2"
+      "line": 28,
+      "id": "automated-end2end-sendpackage-order;sendpackage-cash-english-lightmode;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.scenario({
-  "line": 9,
-  "name": "Normal Order Cycle",
+  "line": 28,
+  "name": "SendPackage-Cash-English-LightMode",
   "description": "",
-  "id": "automated-end2end-normal-order;normal-order-cycle;;2",
+  "id": "automated-end2end-sendpackage-order;sendpackage-cash-english-lightmode;;2",
   "type": "scenario",
   "keyword": "Scenario Outline"
 });
 formatter.step({
-  "line": 5,
+  "line": 4,
+  "name": "Start user app",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 6,
+  "name": "Click skip button and choose env",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 7,
+  "name": "Choose country code for user",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 8,
+  "name": "Enter \"01150300594\"  click continue",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 9,
+  "name": "Enter \"123456\" and click sign in",
+  "matchedColumns": [
+    1
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 10,
+  "name": "Click sendPackage order type",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 11,
+  "name": "Click in changeLocation  then choose currentLocation",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 12,
+  "name": "Click in EnterLocation then Click chooseInMap button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "Choose location and click Done button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "Write the thing that you want to deliver then choose it\u0027s image then Click next",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "Choose payment type cash and then click place order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 16,
+  "name": "Open courier app",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 17,
+  "name": "Choose country code for c",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 18,
+  "name": "Enter \"01012661525\"  click continue c",
+  "matchedColumns": [
+    2
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "Enter \"a12345678\" and click signIn  courier",
+  "matchedColumns": [
+    3
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "Open orders panel and accept order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 21,
+  "name": "Change order status",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 22,
+  "name": "Change order status",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "Change order status",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 24,
   "name": "Order must done",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "NormalOrder2.orderMustDone()"
+  "location": "Orders.startUserApp()"
 });
 formatter.result({
-  "duration": 12585966900,
-  "error_message": "org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element \u003cbutton _ngcontent-dgn-c21\u003d\"\" class\u003d\"btn btn-pill mat-raised-button mat-primary\" color\u003d\"primary\" id\u003d\"btn_search\" mat-raised-button\u003d\"\"\u003e...\u003c/button\u003e is not clickable at point (1453, 549). Other element would receive the click: \u003cdiv class\u003d\"cdk-overlay-backdrop cdk-overlay-transparent-backdrop cdk-overlay-backdrop-showing\"\u003e\u003c/div\u003e\n  (Session info: chrome\u003d102.0.5005.115)\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027DESKTOP-9V79JR0\u0027, ip: \u0027192.168.1.3\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_332\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.115, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: C:\\Users\\HPZBOO~1\\AppData\\L...}, goog:chromeOptions: {debuggerAddress: localhost:64637}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: bb41820f2abfa7770ebf0edc36fef2b2\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:498)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)\r\n\tat com.sun.proxy.$Proxy18.click(Unknown Source)\r\n\tat Pages.Web.LoginPage.LunchWeb(LoginPage.java:85)\r\n\tat Steps.NormalOrder2.orderMustDone(NormalOrder2.java:169)\r\n\tat ✽.Then Order must done(NormalOrder.feature:5)\r\n",
-  "status": "failed"
+  "duration": 22405971700,
+  "status": "passed"
 });
+formatter.match({
+  "location": "Orders.clickSkipButtonAndChooseEnv()"
+});
+formatter.result({
+  "duration": 5191303101,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Orders.chooseCountryCodeForUser()"
+});
+formatter.result({
+  "duration": 9322392001,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "01150300594",
+      "offset": 7
+    }
+  ],
+  "location": "Orders.enter_click_continue(String)"
+});
+formatter.result({
+  "duration": 2124783400,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "123456",
+      "offset": 7
+    }
+  ],
+  "location": "Orders.enter_and_click_sign_in(String)"
+});
+formatter.result({
+  "duration": 3772656000,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Orders.clickSendPackageOrderType()"
+});
+formatter.result({
+  "duration": 15516919200,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Orders.clickInChangeLocationThenChooseCurrentLocation()"
+});
+formatter.result({
+  "duration": 3653070200,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Orders.clickInEnterLocationThenClickChooseInMapButton()"
+});
+formatter.result({
+  "duration": 4803305601,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Orders.chooseLocationAndClickDoneButton()"
+});
+formatter.result({
+  "duration": 4075046400,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Orders.writeTheThingThatYouWantToDeliverThenChooseItSImageThenClickNext()"
+});
+formatter.result({
+  "duration": 6625527401,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Orders.choosePaymentTypeCashAndThenClickPlaceOrder()"
+});
+formatter.result({
+  "duration": 9699682400,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Orders.openCourierApp()"
+});
+formatter.result({
+  "duration": 20292125000,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Orders.chooseCountryCodeForC()"
+});
+formatter.result({
+  "duration": 6862236500,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "01012661525",
+      "offset": 7
+    }
+  ],
+  "location": "Orders.enterClickContinueC(String)"
+});
+formatter.result({
+  "duration": 2120876599,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "a12345678",
+      "offset": 7
+    }
+  ],
+  "location": "Orders.enterAndClickSignInC(String)"
+});
+formatter.result({
+  "duration": 3662405300,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Orders.openOrdersPanelAndAcceptOrder()"
+});
+formatter.result({
+  "duration": 11417222601,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Orders.changeOrderStatus()"
+});
+formatter.result({
+  "duration": 6599605500,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Orders.changeOrderStatus()"
+});
+formatter.result({
+  "duration": 4047881200,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Orders.changeOrderStatus()"
+});
+formatter.result({
+  "duration": 3027197800,
+  "status": "passed"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.scenarioOutline({
+  "line": 30,
+  "name": "SendPackage-Wallet-English-LightMode",
+  "description": "",
+  "id": "automated-end2end-sendpackage-order;sendpackage-wallet-english-lightmode",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 31,
+  "name": "Start user app",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 33,
+  "name": "Click skip button and choose env",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 34,
+  "name": "Choose country code for user",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 35,
+  "name": "Enter \"\u003cUPhone\u003e\"  click continue",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 36,
+  "name": "Enter \"\u003cUPassword\u003e\" and click sign in",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 37,
+  "name": "Click sendPackage order type",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 38,
+  "name": "Click in changeLocation  then choose currentLocation",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 39,
+  "name": "Click in EnterLocation then Click chooseInMap button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 40,
+  "name": "Choose location and click Done button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 41,
+  "name": "Write the thing that you want to deliver then choose it\u0027s image then Click next",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 42,
+  "name": "Choose payment type cash and then click place order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 43,
+  "name": "Open courier app",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 44,
+  "name": "Choose country code for c",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 45,
+  "name": "Enter \"\u003cCPhone\u003e\"  click continue c",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 46,
+  "name": "Enter \"\u003cCPassword\u003e\" and click signIn  courier",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 47,
+  "name": "Open orders panel and accept order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 48,
+  "name": "Change order status",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 49,
+  "name": "Change order status",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 50,
+  "name": "Change order status",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 51,
+  "name": "Start Dashboard",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 52,
+  "name": "Enter login credential \"\u003cDEmail\u003e\" W \"\u003cDPassword\u003e\" and click login",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 53,
+  "name": "Open orders list",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 54,
+  "name": "Search about order number and open its details",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 56,
+  "name": "Assert results",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 58,
+  "name": "",
+  "description": "",
+  "id": "automated-end2end-sendpackage-order;sendpackage-wallet-english-lightmode;",
+  "rows": [
+    {
+      "cells": [
+        "UPhone",
+        "UPassword",
+        "CPhone",
+        "CPassword",
+        "DEmail",
+        "DPassword"
+      ],
+      "line": 59,
+      "id": "automated-end2end-sendpackage-order;sendpackage-wallet-english-lightmode;;1"
+    },
+    {
+      "cells": [
+        "01150300594",
+        "123456",
+        "01012661525",
+        "a12345678",
+        "mohamed.abdelhy@shgardi.app",
+        "123456"
+      ],
+      "line": 60,
+      "id": "automated-end2end-sendpackage-order;sendpackage-wallet-english-lightmode;;2"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.scenario({
+  "line": 60,
+  "name": "SendPackage-Wallet-English-LightMode",
+  "description": "",
+  "id": "automated-end2end-sendpackage-order;sendpackage-wallet-english-lightmode;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 31,
+  "name": "Start user app",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 33,
+  "name": "Click skip button and choose env",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 34,
+  "name": "Choose country code for user",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 35,
+  "name": "Enter \"01150300594\"  click continue",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 36,
+  "name": "Enter \"123456\" and click sign in",
+  "matchedColumns": [
+    1
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 37,
+  "name": "Click sendPackage order type",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 38,
+  "name": "Click in changeLocation  then choose currentLocation",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 39,
+  "name": "Click in EnterLocation then Click chooseInMap button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 40,
+  "name": "Choose location and click Done button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 41,
+  "name": "Write the thing that you want to deliver then choose it\u0027s image then Click next",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 42,
+  "name": "Choose payment type cash and then click place order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 43,
+  "name": "Open courier app",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 44,
+  "name": "Choose country code for c",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 45,
+  "name": "Enter \"01012661525\"  click continue c",
+  "matchedColumns": [
+    2
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 46,
+  "name": "Enter \"a12345678\" and click signIn  courier",
+  "matchedColumns": [
+    3
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 47,
+  "name": "Open orders panel and accept order",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 48,
+  "name": "Change order status",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 49,
+  "name": "Change order status",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 50,
+  "name": "Change order status",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 51,
+  "name": "Start Dashboard",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 52,
+  "name": "Enter login credential \"mohamed.abdelhy@shgardi.app\" W \"123456\" and click login",
+  "matchedColumns": [
+    4,
+    5
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 53,
+  "name": "Open orders list",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 54,
+  "name": "Search about order number and open its details",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 56,
+  "name": "Assert results",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "Orders.startUserApp()"
+});
+formatter.result({
+  "duration": 23017201100,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Orders.clickSkipButtonAndChooseEnv()"
+});
+formatter.result({
+  "duration": 5943756200,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Orders.chooseCountryCodeForUser()"
+});
+formatter.result({
+  "duration": 32431132400,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "01150300594",
+      "offset": 7
+    }
+  ],
+  "location": "Orders.enter_click_continue(String)"
+});
+formatter.result({
+  "duration": 2106474400,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "123456",
+      "offset": 7
+    }
+  ],
+  "location": "Orders.enter_and_click_sign_in(String)"
+});
+formatter.result({
+  "duration": 3911301100,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Orders.clickSendPackageOrderType()"
 });
