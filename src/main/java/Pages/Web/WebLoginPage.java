@@ -15,7 +15,6 @@ public class WebLoginPage extends WebPageBase {
 
     public WebLoginPage(WebDriver driver) {
         super(driver);
-
         this.webDriver = driver;
     }
 

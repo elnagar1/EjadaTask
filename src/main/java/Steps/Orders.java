@@ -59,7 +59,11 @@ public class Orders {
     }
     @And("Choose country code for user")
     public void chooseCountryCodeForUser() {
-        if (userLogin.numberContinue.getText()!="Continue"){userLogin.changeLang.click();}
+        if (userLogin.numberContinue.getText().equalsIgnoreCase("Continue")){
+
+        }else {
+            userLogin.changeLang.click();
+        }
 
         userDriver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         userLogin.countryCodeTxtBox.click();
@@ -209,8 +213,12 @@ public class Orders {
         courierLogin = new CourierLoginPage(courierDriver);
 
         courierLogin.driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        if (courierLogin.btn_continue.getText()!="Continue"){courierLogin.changeLang.click();}
-        courierLogin.tvCountryCodeNumber.click();
+        if (courierLogin.btn_continue.getText().equalsIgnoreCase("Continue")){
+
+        }else {
+            courierLogin.changeLang.click();
+        }
+            courierLogin.tvCountryCodeNumber.click();
         courierLogin.driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         courierLogin.cl_select_egypt.click();
     }
