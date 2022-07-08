@@ -74,12 +74,6 @@ public class TestBase {   // App1 capabilities
 
 
 
-
-
-
-
-
-
     public static FirefoxOptions firefoxOption() {
         FirefoxOptions option = new FirefoxOptions();
         option.addPreference("browser.download.folderList", 2);

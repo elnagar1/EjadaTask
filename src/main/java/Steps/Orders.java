@@ -5,6 +5,9 @@ import Pages.User.UserLoginPage;
 import Pages.User.UserPackagePage;
 import Pages.Web.WebLoginPage;
 import Utilities.Base.TestBase;
+import Utilities.Helper;
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -19,6 +22,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -335,5 +341,17 @@ public class Orders {
 
     @Then("Assert results")
     public void assertResults() {
+    }
+
+    @AfterMethod
+    public void closeBrowser(Scenario scenario,ITestResult result){
+
+        if (webDriver!=null) { webDriver.quit();}
+        if (courierDriver!=null) { courierDriver.quit();}
+        if (userDriver!=null) { userDriver.quit();}
+
+        System.out.println("Scenario Completed: "+scenario.getName());
+        System.out.println("Scenario Status is: "+scenario.getStatus());
+
     }
 }

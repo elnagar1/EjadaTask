@@ -13,7 +13,7 @@ public class LoadProperties
 	
 	//Load SauceLabs Accoutn Data 
 	public static Properties sauceLabsData =  
-			loadProperties(System.getProperty("user.dir")+"\\src\\main\\java\\properties\\saucelabsUser.properties");
+			loadProperties(System.getProperty("user.dir")+"\\src\\main\\resources\\properties\\saucelabsUser.properties");
 	
 	
 	private static Properties loadProperties(String path)

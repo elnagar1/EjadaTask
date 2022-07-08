@@ -21,8 +21,8 @@ import java.nio.file.Paths;
 public class Helper {
 
     // Method to take screenshot when the test cases fail
-    public static void captureScreenshot(WebDriver driver, String screenshotname) {
-        Path dest = Paths.get("./Screenshots", screenshotname + ".png");
+    public static void captureScreenshot(WebDriver driver, String screenShotName) {
+        Path dest = Paths.get("./Screenshots", screenShotName + ".png");
         try {
             Files.createDirectories(dest.getParent());
             FileOutputStream out = new FileOutputStream(dest.toString());
