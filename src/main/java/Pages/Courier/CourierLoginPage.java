@@ -1,62 +1,58 @@
 package Pages.Courier;
 
-import Utilities.Base.AndroidPageBase;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
+import Utilities.Base.PageBase;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-public class CourierLoginPage extends AndroidPageBase {
-    public AndroidDriver driver;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 
+public class CourierLoginPage extends PageBase {
+    public AppiumDriver<MobileElement> driver;
 
-    public CourierLoginPage(AndroidDriver driver) {
+    public CourierLoginPage(AppiumDriver<MobileElement> driver) {
         super(driver);
         this.driver = driver;
     }
 
     @AndroidFindBy(id = "tvCountryCodeNumber")
-    public  AndroidElement tvCountryCodeNumber;
+    @iOSXCUITFindBy(accessibility = "test")
+    public  MobileElement tvCountryCodeNumber;
+
+    @AndroidFindBy(id = "tvChangeConfig")
+    @iOSXCUITFindBy(accessibility = "test")
+    public MobileElement btnChooseDev;
+
+    @AndroidFindBy(id = "rbDev")
+    @iOSXCUITFindBy(accessibility = "test")
+    public MobileElement chooseDev;
+
+    @AndroidFindBy(id = "btnConfirm")
+    @iOSXCUITFindBy(accessibility = "test")
+    public MobileElement confirmDev;
 
     @AndroidFindBy(id = "cl_select_egypt")
-    public AndroidElement cl_select_egypt;
+    @iOSXCUITFindBy(accessibility = "test")
+    public MobileElement cl_select_egypt;
 
     @AndroidFindBy(id = "etCurrentNumber")
-    public AndroidElement etCurrentNumber;
+    @iOSXCUITFindBy(accessibility = "test")
+    public MobileElement etCurrentNumber;
 
     @AndroidFindBy(id = "btn_continue")
-    public AndroidElement btn_continue;
+    @iOSXCUITFindBy(accessibility = "test")
+    public MobileElement btn_continue;
 
     @AndroidFindBy(id = "layout_change_app_lang")
-    public  AndroidElement changeLang;
+    @iOSXCUITFindBy(accessibility = "test")
+    public  MobileElement changeLang;
 
     @AndroidFindBy(id = "etNewPassword")
-    public AndroidElement etNewPassword;
+    @iOSXCUITFindBy(accessibility = "test")
+    public MobileElement etNewPassword;
 
     @AndroidFindBy(id = "btnLogin")
-    public AndroidElement btnLogin;
-
-    @AndroidFindBy(id = "order_payment_type_container")
-    public AndroidElement order;
-
-    @AndroidFindBy(id = "btnAccept")
-    public  AndroidElement btnAccept;
-
-    @AndroidFindBy(id = "tvUpdateOrderStatus")
-    public  AndroidElement tvUpdateOrderStatus;
-
-    @AndroidFindBy(id = "btnDone")
-    public  AndroidElement btnDone;
-
-    @AndroidFindBy(id = "etPrice")
-    public  AndroidElement etPrice;
-
-    @AndroidFindBy(id = "ibUpload")
-    public  AndroidElement ibUpload;
-
-    @AndroidFindBy(xpath ="//*[@text='استخدام الكاميرا']")
-    public  AndroidElement userCamera;
-
-    @AndroidFindBy(id = "btnSend")
-    public AndroidElement btnSend;
+    @iOSXCUITFindBy(accessibility = "test")
+    public MobileElement btnLogin;
 
 
 }

@@ -1,44 +1,42 @@
 package Steps;
 
 import Pages.Courier.CourierLoginPage;
+import Pages.Courier.CourierOrderPage;
+import Pages.User.CheckOutPage;
 import Pages.User.UserLoginPage;
-import Pages.User.UserPackagePage;
+import Pages.User.SendPackagePage;
 import Pages.Web.WebLoginPage;
 import Utilities.Base.TestBase;
-import Utilities.Helper;
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
 import org.json.simple.parser.ParseException;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class Orders {
 
-    AndroidDriver userDriver,courierDriver;
+    AppiumDriver<MobileElement> userDriver,courierDriver;
     WebDriver webDriver;
 
 
     UserLoginPage userLogin;
     CourierLoginPage courierLogin;
-    UserPackagePage userPackagePage;
+    SendPackagePage userPackagePage;
     WebLoginPage webLogin;
-
+    CheckOutPage checkout;
+    CourierOrderPage courierOrderPage;
 
 
     @Given("Start user app")
@@ -50,6 +48,9 @@ public class Orders {
     public void clickSkipButtonAndChooseEnv() {
         //Skid
         userLogin = new UserLoginPage(userDriver);
+
+
+
         userDriver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         userLogin.skipButton.click();
 
@@ -160,18 +161,19 @@ public class Orders {
 
     @And("Choose payment type cash and then click place order")
     public void choosePaymentTypeCashAndThenClickPlaceOrder() {
+        checkout = new CheckOutPage(userDriver);
         userDriver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        userLogin.tv_cash.click();
-        userLogin.btn.click();
+        checkout.tv_cash.click();
+        checkout.btn.click();
         userDriver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-       userLogin.orderNumber = userLogin.orderNumberButton.getText();
+        checkout.orderNumber = checkout.orderNumberButton.getText();
         System.out.println(userLogin.orderNumber );
     }
 
 
-    @And("Click sendPackage order type")
+    @And("Click SendPackage order type")
     public void clickSendPackageOrderType() throws InterruptedException {
-        userPackagePage= new UserPackagePage(userDriver);
+        userPackagePage= new SendPackagePage(userDriver);
         userPackagePage.scrollToPackage();
         userPackagePage.Package.click();
     }
@@ -201,7 +203,7 @@ public class Orders {
     }
 
     @And("Write the thing that you want to deliver then choose it's image then Click next")
-    public void writeTheThingThatYouWantToDeliverThenChooseItSImageThenClickNext() {
+    public void writeTheThingThatYouWantToDeliverThenChooseItSImageThenClickNext() throws InterruptedException {
         userPackagePage.driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         userPackagePage.writeOrder.sendKeys("PlayStation4");
 
@@ -209,8 +211,8 @@ public class Orders {
         userPackagePage.scrollScreen();
         userPackagePage.Next.click();}
 
-    @And("Open courier app")
-    public void openCourierApp() throws IOException, ParseException {
+    @And("Start courier app")
+    public void startCourierApp() throws IOException, ParseException {
         courierDriver =  TestBase.getNewCourierDriver();
     }
 
@@ -251,43 +253,44 @@ public class Orders {
 
     @And("Open orders panel and accept order")
     public void openOrdersPanelAndAcceptOrder() {
-        courierLogin.driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        courierLogin.driver.findElement(By.xpath("//*[@text='Orders panel']")).click();
+        courierOrderPage = new CourierOrderPage(courierDriver);
+        courierOrderPage.driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+        courierOrderPage.driver.findElement(By.xpath("//*[@text='Orders panel']")).click();
 
-        courierLogin.driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        courierLogin.order.click();
-        courierLogin.driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        courierLogin.btnAccept.click();
+        courierOrderPage.driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+        courierOrderPage.order.click();
+        courierOrderPage.driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+        courierOrderPage.btnAccept.click();
     }
 
     @And("Change order status")
     public void changeOrderStatus() {
-        courierLogin.driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        courierLogin.tvUpdateOrderStatus.click();
-        courierLogin.driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        courierLogin.btnDone.click();
+        courierOrderPage.driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+        courierOrderPage.tvUpdateOrderStatus.click();
+        courierOrderPage.driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+        courierOrderPage.btnDone.click();
     }
 
     @And("Add price and upload invoice  then click send button")
     public void addPriceAndUploadInvoiceThenClickSendButton() {
-        courierLogin.driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        courierLogin.tvUpdateOrderStatus.click();
+        courierOrderPage.driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+        courierOrderPage.tvUpdateOrderStatus.click();
 
-        courierLogin.driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        courierLogin.etPrice.sendKeys("50");
+        courierOrderPage.driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+        courierOrderPage.etPrice.sendKeys("50");
 
-        courierLogin.driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        courierLogin.ibUpload.click();
+        courierOrderPage.driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+        courierOrderPage.ibUpload.click();
 
-        courierLogin.driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        courierLogin.userCamera.click();
-        courierLogin.driver.pressKey(new KeyEvent(AndroidKey.CAMERA));
+        courierOrderPage.driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+        courierOrderPage.userCamera.click();
+        ((AndroidDriver)courierOrderPage.driver).pressKey(new KeyEvent(AndroidKey.CAMERA));
 
-        courierLogin.driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        courierLogin.driver.findElement(By.xpath("//*[@text='موافق']")).click();
+        courierOrderPage.driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+        courierOrderPage.driver.findElement(By.xpath("//*[@text='موافق']")).click();
 
-        courierLogin.driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        courierLogin.btnSend.click();
+        courierOrderPage.driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+        courierOrderPage.btnSend.click();
 
     }
 
@@ -343,15 +346,5 @@ public class Orders {
     public void assertResults() {
     }
 
-    @AfterMethod
-    public void closeBrowser(Scenario scenario,ITestResult result){
 
-        if (webDriver!=null) { webDriver.quit();}
-        if (courierDriver!=null) { courierDriver.quit();}
-        if (userDriver!=null) { userDriver.quit();}
-
-        System.out.println("Scenario Completed: "+scenario.getName());
-        System.out.println("Scenario Status is: "+scenario.getStatus());
-
-    }
 }

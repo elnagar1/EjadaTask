@@ -12,7 +12,7 @@ Feature: Automated End2End Normal Order
     And   Enter your products and Click checkout
     And   Choose order price and click submit
     And   Choose payment type cash and then click place order
-    And   Open courier app
+    And   Start courier app
     And   Choose country code for c
     And   Enter "<CPhone>"  click continue c
     And   Enter "<CPassword>" and click signIn  courier
@@ -25,7 +25,7 @@ Feature: Automated End2End Normal Order
     And   Enter login credential "<DEmail>" W "<DPassword>" and click login
     And   Open orders list
     And   Search about order number and open its details
-    Then  Assert
+    Then  Assert results
 
     Examples:
       |    UPhone      |  UPassword  |    CPhone     |     CPassword    |      address       |     DEmail                    |     DPassword    |

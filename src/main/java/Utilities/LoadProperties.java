@@ -9,11 +9,11 @@ public class LoadProperties
 {
 	// Load the properties file from the folder
 	public static Properties userData =  
-			loadProperties(System.getProperty("user.dir")+"\\src\\main\\java\\properties\\userdata.properties"); 
+			loadProperties(System.getProperty("user.dir")+"/src/main/resources/properties/userdata.properties");
 	
 	//Load SauceLabs Accoutn Data 
 	public static Properties sauceLabsData =  
-			loadProperties(System.getProperty("user.dir")+"\\src\\main\\resources\\properties\\saucelabsUser.properties");
+			loadProperties(System.getProperty("user.dir")+"/src/main/resources/properties/saucelabsUser.properties");
 	
 	
 	private static Properties loadProperties(String path)

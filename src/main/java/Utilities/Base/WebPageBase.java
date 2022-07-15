@@ -26,12 +26,12 @@ public class WebPageBase {
 		this.driver =driver;
 	}
 	
-	public static void clickButton(WebElement button)
+	public  void clickButton(WebElement button)
 	{
 		button.click();
 	}
 	
-	public static void setTextElementText(WebElement textElement , String value)
+	public  void setTextElementText(WebElement textElement , String value)
 	{
 		textElement.sendKeys(value);
 	}
@@ -47,9 +47,6 @@ public class WebPageBase {
 		element.clear();
 	}
 
-	public static void typeText(WebElement element, String data) {
-		element.sendKeys(data);
-	}
 
 	public static void typeTextIfElementPresent(WebElement element, String data) {
 		if (element.isDisplayed()) {
@@ -57,33 +54,33 @@ public class WebPageBase {
 		}
 	}
 
-	public static void clearTxtBox(WebElement element) {
+	public  void clearTxtBox(WebElement element) {
 		element.clear();
 	}
 
-	public static void typeRandomNumber(WebElement element, int data) {
+	public  void typeRandomNumber(WebElement element, int data) {
 		Random random = new Random();
 		int rn = random.nextInt(100);
 		String randomNumber = Integer.toString(rn);
 		element.sendKeys(randomNumber);
 	}
 
-	public static String getTextBoxValue(WebElement element) {
+	public  String getTextBoxValue(WebElement element) {
 		return element.getAttribute("value");
 	}
 
-	public static String getText(WebElement element){
+	public  String getText(WebElement element){
 		return element.getText();
 	}
 
-	public static boolean VerifyTextEquals(WebElement element,String expected){
+	public  boolean VerifyTextEquals(WebElement element,String expected){
 		boolean flag=false;
 		if(element.getText().equals(expected))
 			return flag=true;
 		return flag;
 	}
 
-	public  String getTitle(){
+	public String getTitle(){
 		return driver.getTitle();
 	}
 
@@ -92,9 +89,7 @@ public class WebPageBase {
 	}
 
 	public boolean isSelected(WebElement element) {
-		if (element.isSelected())
-			return true;
-		return false;
+		return element.isSelected();
 	}
 
 	public void selectCheckBox(WebElement element) {
@@ -118,58 +113,54 @@ public class WebPageBase {
 	}
 
 	public boolean isEnabled(WebElement element){
-		if(element.isEnabled())
-			return true;
-		return false;
+		return element.isEnabled();
 	}
 
-	public static boolean isDisplayed(WebElement element){
-		if(element.isDisplayed())
-			return true;
-		return false;
+	public  boolean isDisplayed(WebElement element){
+		return element.isDisplayed();
 	}
 
-	public static void selectByText(WebElement element,String text){
+	public  void selectByText(WebElement element,String text){
 		Select select=new Select(element);
 		select.selectByVisibleText(text);
 	}
 
-	public static void selectByIndex(WebElement element,int index){
+	public  void selectByIndex(WebElement element,int index){
 		Select select=new Select(element);
 		select.selectByIndex(index);
 	}
 
-	public static void selectByValue(WebElement element,String value){
+	public  void selectByValue(WebElement element,String value){
 		Select select=new Select(element);
 		select.selectByValue(value);
 	}
 
-	public static String getFirstSelectedOption(WebElement element){
+	public  String getFirstSelectedOption(WebElement element){
 		Select select=new Select(element);
 		return select.getFirstSelectedOption().getText();
 	}
 
-	public static List<WebElement> getAllSelectedOptions(WebElement element){
+	public  List<WebElement> getAllSelectedOptions(WebElement element){
 		Select select=new Select(element);
 		return select.getAllSelectedOptions();
 	}
 
-	public static List<WebElement> getAllOptions(WebElement element){
+	public  List<WebElement> getAllOptions(WebElement element){
 		Select select=new Select(element);
 		return select.getOptions();
 	}
 
-	public static void deSelectByText(WebElement element,String text){
+	public  void deSelectByText(WebElement element,String text){
 		Select select=new Select(element);
 		select.deselectByVisibleText(text);
 	}
 
-	public static void deSelectByIndex(WebElement element,int index){
+	public  void deSelectByIndex(WebElement element,int index){
 		Select select=new Select(element);
 		select.deselectByIndex(index);
 	}
 
-	public static void deSelectByValue(WebElement element,String value){
+	public  void deSelectByValue(WebElement element,String value){
 		Select select=new Select(element);
 		select.deselectByValue(value);
 	}
@@ -179,7 +170,7 @@ public class WebPageBase {
 		element.click();
 	}
 
-	public static void clickOnlyIfElementPresent(WebElement element){
+	public  void clickOnlyIfElementPresent(WebElement element){
 		if(isDisplayed(element))
 			element.click();
 	}
@@ -251,6 +242,7 @@ public class WebPageBase {
 	}
 
 	public  void scrollIntoViewAndClick(WebElement element) {
+		waitUntilElementLocated(25,element);
 		scrollIntoView(element);
 		element.click();
 	}

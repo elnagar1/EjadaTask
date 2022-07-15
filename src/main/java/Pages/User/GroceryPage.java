@@ -1,148 +1,148 @@
 package Pages.User;
 
-import Utilities.Base.AndroidPageBase;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
+import Utilities.Base.PageBase;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
-public class SupermarketOrderPage extends AndroidPageBase {
+public class GroceryPage extends PageBase {
 
-    public SupermarketOrderPage(AndroidDriver driver) {
+    public GroceryPage(AppiumDriver<MobileElement> driver) {
         super(driver);
     }
 
     @AndroidFindBy(xpath = "//*[@text='Supermarket']")
-    public AndroidElement supermarketCategory;
+    public MobileElement supermarketCategory;
 
     @AndroidFindBy(id = "bottom")
-    public AndroidElement nearestSupermarketBt;
+    public MobileElement nearestSupermarketBt;
 
     @AndroidFindBy(id = "text_view_add_to_cart")
-    public AndroidElement addBt;
+    public MobileElement addBt;
 
     @AndroidFindBy(id = "text_view_add")
-    public AndroidElement plusBt;
+    public MobileElement plusBt;
 
     @AndroidFindBy(id = "iv_add_new_item")
-    public AndroidElement specialItemBt;
+    public MobileElement specialItemBt;
 
     @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.TextView")
-    public AndroidElement addSpecialItemBt;
+    public MobileElement addSpecialItemBt;
 
     @AndroidFindBy(id = "et_add_item_order_anything")
-    public AndroidElement anotherProductTx;
+    public MobileElement anotherProductTx;
 
     @AndroidFindBy(id = "btnConfirmBasket")
-    public AndroidElement addToCardBt;
+    public MobileElement addToCardBt;
 
     @AndroidFindBy(xpath = "//*[@text='Vegetables']")
-    public AndroidElement subcategoryBt;
+    public MobileElement subcategoryBt;
 
     @AndroidFindBy(xpath = "//*[@text='View Cart']")
-    public AndroidElement checkoutBt;
+    public MobileElement checkoutBt;
 
     @AndroidFindBy(id = "ib_basket")
-    public AndroidElement counterBasketBt;
+    public MobileElement counterBasketBt;
 
     @AndroidFindBy(id = "textView")
-    public AndroidElement supermarketDeliveryFee;
+    public MobileElement supermarketDeliveryFee;
 
     @AndroidFindBy(id = "tvAddNewItem_basket")
-    public AndroidElement addOtherItemBt;
+    public MobileElement addOtherItemBt;
 
     @AndroidFindBy(id = "btnCancelDelete")
-    public AndroidElement cancelDeleteBt;
+    public MobileElement cancelDeleteBt;
 
     @AndroidFindBy(id = "btnConfirmDelete")
-    public AndroidElement confirmDeleteBt;
+    public MobileElement confirmDeleteBt;
 
     @AndroidFindBy(id = "tv_logout_order_notes_dialog")
-    public AndroidElement clearAllDialog;
+    public MobileElement clearAllDialog;
 
 
     @AndroidFindBy(id = "tvProceed")
-    public AndroidElement proceedToCheckoutBt;
+    public MobileElement proceedToCheckoutBt;
 
     @AndroidFindBy(id = "confirm")
-    public AndroidElement orderPriceSubmitBt;
+    public MobileElement orderPriceSubmitBt;
 
     @AndroidFindBy(id = "tvLessThan100")
-    public AndroidElement lessThan100Bt;
+    public MobileElement lessThan100Bt;
 
     @AndroidFindBy(id = "storeName")
-    public AndroidElement storeName;
+    public MobileElement storeName;
 
     @AndroidFindBy(id = "favoriteName")
-    public AndroidElement location;
+    public MobileElement location;
 
     @AndroidFindBy(id = "change")
-    public AndroidElement changeLocation;
+    public MobileElement changeLocation;
 
     @AndroidFindBy(id = "linearProducts")
-    public AndroidElement productsList;
+    public MobileElement productsList;
 
     @AndroidFindBy(id = "cash")
-    public AndroidElement cashBt;
+    public MobileElement cashBt;
 
     @AndroidFindBy(id = "wallet")
-    public AndroidElement walletBt;
+    public MobileElement walletBt;
 
     @AndroidFindBy(id = "online")
-    public AndroidElement onlineBt;
+    public MobileElement onlineBt;
 
     @AndroidFindBy(id = "five")
-    public AndroidElement fiveShgardiTipBt;
+    public MobileElement fiveShgardiTipBt;
 
     @AndroidFindBy(id = "customTipValue")
-    public AndroidElement otherShgradiTipBt;
+    public MobileElement otherShgradiTipBt;
 
     @AndroidFindBy(id = "reset")
-    public AndroidElement resetShgardiTipBt;
+    public MobileElement resetShgardiTipBt;
 
     @AndroidFindBy(id = "hasPromo")
-    public AndroidElement promoCodeBt;
+    public MobileElement promoCodeBt;
 
     @AndroidFindBy(id = "radio")
-    public AndroidElement firstPromoCodeBt;
+    public MobileElement firstPromoCodeBt;
 
     @AndroidFindBy(id = "btn")
-    public AndroidElement submitPromoCodeBt;
+    public MobileElement submitPromoCodeBt;
 
     @AndroidFindBy(id = "promoValue")
-    public AndroidElement promoCodeValue;
+    public MobileElement promoCodeValue;
 
     @AndroidFindBy(id = "fees_delivery_layout")
-    public AndroidElement invoiceBreakDown;
+    public MobileElement invoiceBreakDown;
 
     @AndroidFindBy(xpath =
             "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.view.ViewGroup[4]/android.widget.LinearLayout/android.view.ViewGroup[1]/android.widget.LinearLayout/android.widget.TextView")
-    public AndroidElement orderPrice;
+    public MobileElement orderPrice;
 
     @AndroidFindBy(xpath =
             "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.view.ViewGroup[4]/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.LinearLayout[2]/android.widget.TextView[1]")
-    public AndroidElement deliveryFee;
+    public MobileElement deliveryFee;
 
     @AndroidFindBy(xpath =
             "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.view.ViewGroup[4]/android.widget.LinearLayout/android.view.ViewGroup[3]/android.widget.LinearLayout/android.widget.TextView[1]")
-    public AndroidElement shgardiTip;
+    public MobileElement shgardiTip;
 
     @AndroidFindBy(xpath =
             "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.view.ViewGroup[4]/android.widget.LinearLayout/android.view.ViewGroup[4]/android.widget.LinearLayout/android.widget.TextView[1]")
-    public AndroidElement subtotal;
+    public MobileElement subtotal;
 
     @AndroidFindBy(xpath =
             "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.view.ViewGroup[4]/android.widget.LinearLayout/android.view.ViewGroup[5]/android.widget.LinearLayout/android.widget.TextView[1]")
-    public AndroidElement totalPrice;
+    public MobileElement totalPrice;
 
     @AndroidFindBy(xpath =
             "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.view.ViewGroup[4]/android.widget.LinearLayout/android.view.ViewGroup[6]/android.widget.LinearLayout/android.widget.TextView[1]")
-    public AndroidElement totalInvoice;
+    public MobileElement totalInvoice;
 
     @AndroidFindBy(id = "btn")
-    public AndroidElement placeOrderBt;
+    public MobileElement placeOrderBt;
 
     @AndroidFindBy(id = "title")
-    public AndroidElement trackOrderScreen;
+    public MobileElement trackOrderScreen;
 
 
     public void clickSupermarketCategory() {
