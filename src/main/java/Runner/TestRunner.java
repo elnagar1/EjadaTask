@@ -8,12 +8,11 @@ import org.testng.annotations.AfterMethod;
 
 
 @CucumberOptions(
-    features="src/main/resources/Features/PackageOrder.feature",
-    glue= {"Steps"},
-    plugin= {"pretty","html:target/cucumber-html-report"}
+        features = "src/main/resources/Features/Scenarios.feature",
+        glue = {"Steps"},
+        plugin = {"pretty", "html:target/cucumber-html-report"}
 )
-public class TestRunner extends AbstractTestNGCucumberTests  {
-
+public class TestRunner extends AbstractTestNGCucumberTests {
 
 
 }

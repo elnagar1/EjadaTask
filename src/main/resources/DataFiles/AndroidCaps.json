@@ -1,0 +1,8 @@
+{
+	"platformName": "android",
+	"appActivity": "com.swaglabsmobileapp.SplashActivity",
+	"appPackage": "com.swaglabsmobileapp",
+	"automationName": "UiAutomator2",
+	"platformName": "Android",
+	"appium:udid": "R5CRC0K3RLK"
+}
