@@ -36,11 +36,8 @@ public class MobileCycleSteps {
 
     @Then("Verify status \"([^\"]*)\"")
     public void verifyStatus(String status) {
-        if (status.equals("valid")){
-            LoginPage.getInstance(driver).checkProductScreenIsExist();
-        }
-        else {
-            LoginPage.getInstance(driver).checkErrorMessage();
-        }
+
+            LoginPage.getInstance(driver).checkProductScreenIsExist(status);
+
     }
 }

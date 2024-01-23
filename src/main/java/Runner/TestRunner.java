@@ -8,7 +8,7 @@ import org.testng.annotations.AfterMethod;
 
 
 @CucumberOptions(
-        features = "src/main/resources/Features/Scenarios.feature",
+        features = "src/test/java/Features/MobileScenarios.feature",
         glue = {"Steps"},
         plugin = {"pretty", "html:target/cucumber-html-report"}
 )

@@ -12,13 +12,13 @@ public class LoginPage extends PageBase {
 
     @FindBy(xpath = "//*[@class = 'android.widget.EditText' and (@text = 'Username' or . = 'Username')]")
     public WebElement userNameTxb;
-    @FindBy(xpath = "//*[@class = 'android.widget.EditText' and (@text = 'Password' or . = 'Password')]")
+    @FindBy(xpath = "//android.widget.EditText[@content-desc='test-Password']")
     WebElement passwordTxb;
 
     @FindBy(xpath = "//*[@class = 'android.widget.TextView' and (@text = 'LOGIN' or . = 'LOGIN')]")
     WebElement loginBtn;
 
-    @FindBy(xpath = "//*[@class = 'android.widget.TextView' and (@text = '"+ GlobalConstant.LOGIN_ERORR_MESSAGE +"')]")
+    @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-Error message\"]//following-sibling::android.widget.TextView[1]")
     WebElement errorMessage;
 
 
@@ -53,11 +53,28 @@ public class LoginPage extends PageBase {
 
     }
 
+    public void checkProductScreenIsExist(String status) {
 
-    public void checkErrorMessage() {
-   hardAssert.assertTrue(isDisplayed(errorMessage));
+
+        if (status.equals("valid")){
+            hardAssert.assertTrue(isDisplayed(products));
+        }
+
+        else if (status.equals("emptyUsName") ){
+            checkEmptyMessage("Username");
+        }
+
+        else if (status.equals("invalid") ){
+            hardAssert.assertTrue(errorMessage.getText().equals(GlobalConstant.LOGIN_ERORR_MESSAGE));
+        }
+
+        else if (status.equals("emptyPass") ){
+           checkEmptyMessage("Password");
+        }
+
     }
-    public void checkProductScreenIsExist() {
-        hardAssert.assertTrue(isDisplayed(products));
+
+    public void checkEmptyMessage(String text) {
+        hardAssert.assertTrue(errorMessage.getText().equals(text+" is required"));
     }
 }

@@ -1,4 +1,4 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/main/resources/Features/MobileScenarios.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/java/Features/MobileScenarios.feature");
 formatter.feature({
   "line": 1,
   "name": "Automated End2End",
@@ -57,7 +57,7 @@ formatter.examples({
       "cells": [
         "standard_user",
         "Test2",
-        "no"
+        "invalid"
       ],
       "line": 11,
       "id": "automated-end2end;scenario1;;3"
@@ -66,7 +66,7 @@ formatter.examples({
       "cells": [
         "Test1",
         "secret_sauce",
-        "no"
+        "invalid"
       ],
       "line": 12,
       "id": "automated-end2end;scenario1;;4"
@@ -75,7 +75,7 @@ formatter.examples({
       "cells": [
         "",
         "secret_sauce",
-        "no"
+        "emptyUsName"
       ],
       "line": 13,
       "id": "automated-end2end;scenario1;;5"
@@ -84,7 +84,7 @@ formatter.examples({
       "cells": [
         "standard_user",
         "",
-        "no"
+        "emptyPass"
       ],
       "line": 14,
       "id": "automated-end2end;scenario1;;6"
@@ -93,7 +93,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 18238545799,
+  "duration": 13704980700,
   "status": "passed"
 });
 formatter.scenario({
@@ -130,7 +130,7 @@ formatter.match({
   "location": "MobileCycleSteps.openApp()"
 });
 formatter.result({
-  "duration": 54199199,
+  "duration": 59336000,
   "status": "passed"
 });
 formatter.match({
@@ -145,4 +145,17 @@ formatter.match({
     }
   ],
   "location": "MobileCycleSteps.login_with_credentials_and(String,String)"
+});
+formatter.result({
+  "duration": 5014886100,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "valid",
+      "offset": 15
+    }
+  ],
+  "location": "MobileCycleSteps.verifyStatus(String)"
 });
