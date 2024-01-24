@@ -1,0 +1,12 @@
+<suite name="testSuit">
+
+    <test name="te" >
+
+
+        	<classes>
+                <class name="src.main.java.Runner.MobileTestRunner"/>
+            </classes>
+
+
+    </test>
+</suite>
